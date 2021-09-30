@@ -1,0 +1,11 @@
+<ng-container *ngIf="stage !== null">
+  <div>
+    <span
+      class="card-panel grey lighten-2"
+      style="display: inline-block; width: 99%"
+    >
+      <b> {{ stage.name }} - {{ stage.tasks.length }}</b>
+    </span>
+    <ng-content> </ng-content>
+  </div>
+</ng-container>

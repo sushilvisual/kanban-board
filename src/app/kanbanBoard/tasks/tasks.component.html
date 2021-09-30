@@ -1,0 +1,20 @@
+<div class="card">
+    <div class="card-content">
+        <div style="display: flex; justify-content: space-between">
+            <b>{{ task.name }}</b>
+            <button (click)="display = 'block'">...</button>
+        </div>
+        <app-context-menu-ctrl (edit)="edit.emit($event)" (delete)="delete.emit($event)" [display]="display" [taskId]="task.id" [stageId]="stageId" (hide)="display = 'none'">
+        </app-context-menu-ctrl>
+        <div>
+            <b>{{ task.startDate | date: "MMM dd,yyyy " }}</b>
+        </div>
+        <div style="display: flex; justify-content: space-between">
+            <span style="position: relative; left: -15px" [button-color]="task.priority" class="btn waves-effect waves-light badge" type="submit " name="action ">
+        {{ task.priority }}
+      </span>
+            <ng-content> </ng-content>
+        </div>
+    </div>
+</div>
+`

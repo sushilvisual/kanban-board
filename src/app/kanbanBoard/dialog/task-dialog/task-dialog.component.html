@@ -1,0 +1,60 @@
+<div [style.display]="display" class="model">
+    <form>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputEmail4">Task Name </label>
+                <input type="email" class="form-control" id="inputEmail4" [formControl]="taskNameCtrl" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputAddress ">Start Date</label>
+            <input type="date " class="form-control" id="inputAddress " [formControl]="startDate" />
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="inputState ">Priority</label>
+                <select id="inputState " class="form-control" [formControl]="priority">
+          <option selected>Choose...</option>
+          <option value="LOW">Low</option>
+          <option value="MEDIUM">Medium</option>
+          <option value="HIGH">High</option>
+          <option value="CRITICAL">Critical</option>
+        </select>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="inputState ">Members </label>
+                <select id="inputState " class="form-control" multiple [formControl]="members">
+          <option selected>Choose...</option>
+          <option>sushil</option>
+          <option>amut</option>
+          <option>kapil</option>
+          <option>ornage</option>
+        </select>
+            </div>
+        </div>
+        <div style="text-align: right">
+            <button type="submit " class="btn btn-danger" (click)="hide.emit()">
+        Close</button
+      >&nbsp;&nbsp;
+      <button
+        type="submit "
+        class="btn btn-primary"
+        (click)="
+          addTask.emit({
+            name: taskNameCtrl.value,
+            date: startDate.value,
+            priority: priority.value,
+            members: members.value,
+            stageId: stageId
+          });clear()
+        "
+      >
+        Submit
+      </button>
+        </div>
+    </form>
+</div>

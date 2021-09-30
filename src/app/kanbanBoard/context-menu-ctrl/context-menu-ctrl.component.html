@@ -1,0 +1,9 @@
+<div class="vertical-menu" [style.display]="display" style="position: absolute; z-index: 1000; border: solid 1px lightgray">
+    <a href="#" (click)="edit.emit({ taskId: taskId, stageId: stageId }); hide.emit()">EDIT</a
+  >
+  <a
+    href="#"
+    (click)="delete.emit({ taskId: taskId, stageId: stageId }); hide.emit()"
+    >Delete</a
+  >
+</div>

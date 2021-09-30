@@ -1,0 +1,30 @@
+button {
+    border: 0;
+    background: white;
+}
+
+.vertical-menu {
+    width: 200px;
+}
+
+.vertical-menu a {
+    background-color: #eee;
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+}
+
+.vertical-menu a:hover {
+    background-color: #ccc;
+}
+
+.vertical-menu a.active {
+    background-color: #04aa6d;
+    color: white;
+}
+
+hr {
+    border-style: dotted;
+    border-color: lightgray;
+}

@@ -1,0 +1,13 @@
+<ng-container *ngIf="member.image; else showMemberinitial">
+  <img
+    class="rounded-image center-align"
+    [src]="member.image"
+    style="width: 30px; height: 30px"
+    [title]="member.fullName | titlecase"
+  />
+</ng-container>
+<ng-template #showMemberinitial>
+  <span class="badge" [title]="member.fullName | titlecase">{{
+    member.memberInitial
+  }}</span>
+</ng-template>

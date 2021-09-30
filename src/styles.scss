@@ -1,0 +1,30 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+.card-panel {
+  padding: 10px !important;
+  margin: 0px !important;
+}
+.divider {
+  border-bottom-style: dotted !important;
+  border-bottom-width: 1px !important;
+  border-block-color: lightgray !important;
+  background-color: white !important;
+}
+
+.card .card-content {
+  padding: 12px !important;
+}
+
+.rounded-image {
+  border-radius: 50%;
+}
+label {
+  // font-weight: bold;
+}
+* {
+  font-family: "Roboto", sans-serif;
+}

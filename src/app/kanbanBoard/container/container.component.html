@@ -1,0 +1,30 @@
+<app-task-dialog [stageId]="stageId" [display]="displayCard" (hide)="displayCard = 'none'" (addTask)="addTask($event); displayCard = 'none'">
+</app-task-dialog>
+<div class="mt-20 layout-column justify-content-center align-items-center">
+    <div class="container" style="display: flex; justify-content: space-between">
+        <div class="col z-depth-2" *ngFor="let stage of stages; index as i" style="
+        width: 50%;
+        margin-left: 10px;
+        border: solid 1px lightgray;
+        border-radius: 12px;
+        padding: 10px;
+      ">
+            <app-stages [stage]="stage">
+                <div *ngFor="let task of stage.tasks" [dragula]="'s'">
+                    <app-tasks [task]="task" [stageId]="stage.id" [data-stage-id]="stage.id" [data-task-id]="task.id" (edit)="editTask($event)" (delete)="deleteTask($event)">
+                        <div style="display: inline">
+                            <ng-container *ngFor="let member of task.members">
+                                <app-task-member [member]="member"></app-task-member>
+                            </ng-container>
+                        </div>
+                    </app-tasks>
+
+                    <div class="divider"></div>
+                </div>
+                <div class="center-align">
+                    <a class="btn btn-flat" (click)="addCard(stage.id)">+ Add Card</a>
+                </div>
+            </app-stages>
+        </div>
+    </div>
+</div>
